@@ -339,6 +339,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Fireball, function (sprite, othe
     info.changeLifeBy(-1)
     otherSprite.destroy()
 })
+function titlescreen () {
+    music.playMelody("C5 A B G A F G E ", 120)
+    game.splash("Welcome to Mario Saga", "By Astringe")
+    effects.confetti.startScreenEffect(200)
+    game.showLongText("Good Luck", DialogLayout.Bottom)
+    effects.confetti.endScreenEffect()
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     if (Mario.y < otherSprite.y) {
@@ -352,6 +359,7 @@ let flower: Sprite = null
 let bee: Sprite = null
 let Mario: Sprite = null
 let current_level = 0
+titlescreen()
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
